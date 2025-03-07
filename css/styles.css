@@ -1,0 +1,203 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Genel Gövde Stili */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #0f0f0f; /* Koyu arka plan rengi */
+  color: #ffffff; /* Metin rengi beyaz */
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: flex-end; /* Linkleri sağa yaslar */
+  background-color: #1a1a1a;
+  padding: 10px 20px;
+}
+
+.nav-item {
+  list-style: none;
+  margin-left: 20px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #00c6ff; /* Hover rengi */
+}
+
+/* Hero Bölümü */
+#hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: none; /* Dilerseniz bir arka plan resmi/gradient ekleyebilirsiniz */
+}
+
+.glow-text {
+  font-size: 3.5rem;
+  text-shadow: 
+    0 0 5px #00c6ff, 
+    0 0 10px #00c6ff, 
+    0 0 20px #00c6ff;
+  /* Neon benzeri bir efekt için text-shadow ayarı */
+}
+
+#hero p {
+  font-size: 1.4rem;
+  max-width: 800px;
+  margin: 20px auto 0;
+}
+
+/* Genel Başlık Stili */
+.section-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #00c6ff; /* Bölüm başlıklarında dikkat çekici renk */
+}
+
+/* Ana Bölümler */
+.satellite-section,
+.timeline-section,
+.future-section {
+  margin: 50px auto;
+  max-width: 1200px;
+  padding: 20px;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Uydu Kartları */
+.satellite-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: #2a2a2a;
+  border-radius: 8px;
+  margin: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  width: 250px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+}
+
+.card img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin: 10px 0;
+  color: #00c6ff; /* Kart başlık rengi */
+}
+
+/* Timeline */
+.timeline {
+  margin-top: 20px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.timeline-date {
+  font-weight: bold;
+  margin-right: 20px;
+  color: #00c6ff;
+}
+
+.timeline-content h3 {
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+/* Gelecek Planları */
+.future-plans {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.plan-card {
+  background: #2a2a2a;
+  border-radius: 8px;
+  margin: 15px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  width: 250px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.plan-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+}
+
+.plan-card i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #00c6ff;
+}
+
+.plan-card h3 {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.plan-card p {
+  color: #ccc;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #1a1a1a;
+  margin-top: 50px;
+}
+
+footer p {
+  color: #fff;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+  .satellite-cards,
+  .future-plans {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card,
+  .plan-card {
+    width: 90%;
+  }
+}

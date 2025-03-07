@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpaceXLearning - Quiz</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/quiz.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">SpaceXLearning</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="quiz.html">Quiz</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Quiz Section with Tabs -->
+  <div class="container mt-4">
+    <h2 class="text-center mb-4">Space Quizzes</h2>
+    <ul class="nav nav-tabs justify-content-center" id="quizTabs" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="quiz1-tab" data-bs-toggle="tab" data-bs-target="#quiz1" type="button" role="tab" aria-controls="quiz1" aria-selected="true">Quiz 1</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="quiz2-tab" data-bs-toggle="tab" data-bs-target="#quiz2" type="button" role="tab" aria-controls="quiz2" aria-selected="false">Quiz 2</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="quiz3-tab" data-bs-toggle="tab" data-bs-target="#quiz3" type="button" role="tab" aria-controls="quiz3" aria-selected="false">Quiz 3</button>
+      </li>
+    </ul>
+    <div class="tab-content mt-4" id="quizTabContent">
+      <!-- Quiz 1 -->
+      <div class="tab-pane fade show active" id="quiz1" role="tabpanel" aria-labelledby="quiz1-tab">
+        <iframe src="https://wordwall.net/tr/embed/829ae567d920453b8d1b03dae262ea18?themeId=1&templateId=8&fontStackId=0" allowfullscreen width="500" height="380"></iframe>
+      </div>
+      <!-- Quiz 2 -->
+      <div class="tab-pane fade" id="quiz2" role="tabpanel" aria-labelledby="quiz2-tab">
+        <iframe src="https://wordwall.net/tr/embed/d85c2e978e5649d6a0418ea802a440bd?themeId=1&templateId=10&fontStackId=0" allowfullscreen width="500" height="380"></iframe>
+      </div>
+      <!-- Quiz 3 -->
+      <div class="tab-pane fade" id="quiz3" role="tabpanel" aria-labelledby="quiz3-tab">
+        <iframe src="https://wordwall.net/tr/embed/89cda7f80afa47ba9a2ffa7ffe395701?themeId=23&templateId=69&fontStackId=0" allowfullscreen width="500" height="380"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 SpaceXLearning. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Bootstrap JS'den sonra -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Tüm tab butonlarını seç
+    const tabButtons = document.querySelectorAll('button[data-bs-toggle="tab"]');
+    
+    // Her tab butonu için event listener ekle
+    tabButtons.forEach(tab => {
+      tab.addEventListener('shown.bs.tab', function(event) {
+        // Hedef tab pane'i bul
+        const targetId = event.target.getAttribute('data-bs-target');
+        const targetPane = document.querySelector(targetId);
+        
+        // İframe'i bul
+        const iframe = targetPane.querySelector('iframe');
+        
+        // Sadece görünür olan iframe'i yeniden yükle
+        if(iframe) {
+          const originalSrc = iframe.src;
+          iframe.src = ''; // Kaynağı sıfırla
+          setTimeout(() => {
+            iframe.src = originalSrc; // Orijinal kaynağı yeniden yükle
+          }, 100);
+        }
+      });
+    });
+  });
+  </script>
+</body>
+</html>
